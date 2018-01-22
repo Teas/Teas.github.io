@@ -252,6 +252,158 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/分布式文件系统HDFS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tea">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tea blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/23/分布式文件系统HDFS/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T01:44:43+08:00">
+                2018-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>title: 分布式文件系统HDFS date: 2018-01-23 01:43:55 tags: 大数据 keywords: 大数据</p>
+<h4 id="HDFS文档"><a href="#HDFS文档" class="headerlink" title="HDFS文档"></a>HDFS文档</h4><p><a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" target="_blank" rel="noopener">http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html</a></p>
+<h4 id="HDFS架构"><a href="#HDFS架构" class="headerlink" title="HDFS架构"></a>HDFS架构</h4><p>HDFS has a master/slave architecture. An HDFS cluster consists of a single NameNode, a master server that manages the file system namespace and regulates access to files by clients. In addition, there are a number of DataNodes, usually one per node in the cluster, which manage storage attached to the nodes that they run on. HDFS exposes a file system namespace and allows user data to be stored in files. Internally, a file is split into one or more blocks and these blocks are stored in a set of DataNodes. The NameNode executes file system namespace operations like opening, closing, and renaming files and directories. It also determines the mapping of blocks to DataNodes. The DataNodes are responsible for serving read and write requests from the file system’s clients. The DataNodes also perform block creation, deletion, and replication upon instruction from the NameNode.</p>
+<p>(此处应有官网架构图,待文件服务器好后上传)</p>
+<h4 id="HDFS环境搭建"><a href="#HDFS环境搭建" class="headerlink" title="HDFS环境搭建"></a>HDFS环境搭建</h4><h5 id="安装版本"><a href="#安装版本" class="headerlink" title="安装版本"></a>安装版本</h5><p>这里不用官网版本,而是用hadoop衍生版本。<br><a href="http://blog.csdn.net/duyuanhai/article/details/54908298" target="_blank" rel="noopener">选择CDH的理由</a></p>
+<h5 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h5><p><a href="http://archive.cloudera.com/cdh5/cdh/5/" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/cdh/5/</a></p>
+<p>版本:<a href="http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.7.0.tar.gz" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.7.0.tar.gz</a></p>
+<h6 id="Linux安装"><a href="#Linux安装" class="headerlink" title="Linux安装"></a>Linux安装</h6><p>wget URL</p>
+<p>解压</p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><blockquote>
+<p>本次为单节点配置。多节点安装日后再说</p>
+</blockquote>
+<p>参考文档<br><a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html" target="_blank" rel="noopener">http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html</a></p>
+<p>1.配置JAVA HOME</p>
+<blockquote>
+<p>tip : echo $JAVA_HOME</p>
+</blockquote>
+<p>etc/hadoop/hadoop-env.sh<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># set to the root of your Java installation</span><br><span class="line">export JAVA_HOME=/usr/java/latest</span><br></pre></td></tr></table></figure></p>
+<p>2.core-site.xml<br>etc/hadoop/core-site.xml<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;fs.defaultFS&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;hdfs:<span class="comment">//localhost:9000&lt;/value&gt;</span></span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
+<p>3.副本系数</p>
+<p>etc/hadoop/hdfs-site.xml</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;1&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+<p>因单节点,系数设置为1</p>
+<p>4:格式化</p>
+<blockquote>
+<p>不可重复格式化!</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/hdfs namenode -format</span><br></pre></td></tr></table></figure>
+<p>格式化的时候可能报如下错误<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">java.net.UnknownHostException: iZbp1bb1rjtnkeukcsmczgZ: iZbp1bb1rjtnkeukcsmczgZ</span><br><span class="line">        at java.net.InetAddress.getLocalHost(InetAddress.java:<span class="number">1475</span>)</span><br><span class="line">        at org.apache.hadoop.net.DNS.resolveLocalHostname(DNS.java:<span class="number">264</span>)</span><br><span class="line">        at org.apache.hadoop.net.DNS.&lt;clinit&gt;(DNS.java:<span class="number">57</span>)</span><br><span class="line">        at org.apache.hadoop.hdfs.server.namenode.NNStorage.newBlockPoolID(NNStorage.java:<span class="number">966</span>)</span><br><span class="line">        at org.apache.hadoop.hdfs.server.namenode.NNStorage.newNamespaceInfo(NNStorage.java:<span class="number">575</span>)</span><br><span class="line">        at org.apache.hadoop.hdfs.server.namenode.FSImage.format(FSImage.java:<span class="number">144</span>)</span><br><span class="line">        at org.apache.hadoop.hdfs.server.namenode.NameNode.format(NameNode.java:<span class="number">1041</span>)</span><br><span class="line">        at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:<span class="number">1479</span>)</span><br><span class="line">        at org.apache.hadoop.hdfs.server.namenode.NameNode.main(NameNode.java:<span class="number">1606</span>)</span><br></pre></td></tr></table></figure></p>
+<p>原因是主机名映射未找到,在<code>/etc/host /etc/sysconfig/network</code>配置上即可</p>
+<p>5:启动</p>
+<p>sbin/start-dfs.sh</p>
+<p>启动后用jps命令查看是否启动成功</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/15/Intellij实用技巧/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -322,8 +474,7 @@
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>本文章记录Intellij实用技巧,主要收录能提高在实际开发中效率。文中所涉及到的快捷键不一定适用其他机器。可在keymap中根据名称定为到具体快捷键.不定期更新。</p>
 </blockquote>
 <h3 id="查看调用关系"><a href="#查看调用关系" class="headerlink" title="查看调用关系"></a>查看调用关系</h3><p>call hierarchy </p>
@@ -333,15 +484,13 @@
 <li>show UML Popup</li>
 </ul>
 <h3 id="分屏-左右-上下"><a href="#分屏-左右-上下" class="headerlink" title="分屏(左右 上下)"></a>分屏(左右 上下)</h3><p>split horizontal 或者 split vertical</p>
-<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>实用性:在众多类、众多行代码中标签跳转。</p>
-<p><code>Toggle bookmarks with Mnemonic</code></p>
-<p>标签后按Control + 下标;例如control + 1</p>
-<h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><h4 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h4><p>前置条件:已打好断点,光标在断点行</p>
-<p><code>Edit breakpoint</code> sheft command + F8</p>
-<h4 id="跳转下个project"><a href="#跳转下个project" class="headerlink" title="跳转下个project"></a>跳转下个project</h4><p>command + ` （左上角）</p>
-<p>MAC通用快捷键,适用于其他大部分软件</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/15/Intellij实用技巧/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -811,7 +960,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

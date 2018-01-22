@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="收费" />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="收费项目常用方法总结 不间断更新   缴费相关啦啦啦  其他相关导出excelTITLE只有一行123List&amp;lt;Object[]&amp;gt; exportlist = null;String[] titles = &amp;#123;title1,title2,title3&amp;#125;;exportExcel(null, sheetName, titles, fileName, exportlist)">
-<meta name="keywords" content="收费">
+<meta name="description" content="title: 分布式文件系统HDFS date: 2018-01-23 01:43:55 tags: 大数据 keywords: 大数据 HDFS文档http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html HDFS架构HDFS has a master/slave architect">
 <meta property="og:type" content="article">
-<meta property="og:title" content="收费项目常用方法-JAVA">
-<meta property="og:url" content="http://yoursite.com/2018/01/08/收费项目常用方法-JAVA/index.html">
+<meta property="og:title" content="Tea blog">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/分布式文件系统HDFS/index.html">
 <meta property="og:site_name" content="Tea blog">
-<meta property="og:description" content="收费项目常用方法总结 不间断更新   缴费相关啦啦啦  其他相关导出excelTITLE只有一行123List&amp;lt;Object[]&amp;gt; exportlist = null;String[] titles = &amp;#123;title1,title2,title3&amp;#125;;exportExcel(null, sheetName, titles, fileName, exportlist)">
+<meta property="og:description" content="title: 分布式文件系统HDFS date: 2018-01-23 01:43:55 tags: 大数据 keywords: 大数据 HDFS文档http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html HDFS架构HDFS has a master/slave architect">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-08T15:20:28.154Z">
+<meta property="og:updated_time" content="2018-01-22T17:44:44.256Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="收费项目常用方法-JAVA">
-<meta name="twitter:description" content="收费项目常用方法总结 不间断更新   缴费相关啦啦啦  其他相关导出excelTITLE只有一行123List&amp;lt;Object[]&amp;gt; exportlist = null;String[] titles = &amp;#123;title1,title2,title3&amp;#125;;exportExcel(null, sheetName, titles, fileName, exportlist)">
+<meta name="twitter:title" content="Tea blog">
+<meta name="twitter:description" content="title: 分布式文件系统HDFS date: 2018-01-23 01:43:55 tags: 大数据 keywords: 大数据 HDFS文档http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html HDFS架构HDFS has a master/slave architect">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/08/收费项目常用方法-JAVA/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/23/分布式文件系统HDFS/"/>
 
 
 
 
 
-  <title>收费项目常用方法-JAVA | Tea blog</title>
+  <title> | Tea blog</title>
   
 
 
@@ -253,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/08/收费项目常用方法-JAVA/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/分布式文件系统HDFS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tea">
@@ -270,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">收费项目常用方法-JAVA</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -282,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-08T10:39:37+08:00">
-                2018-01-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T01:44:43+08:00">
+                2018-01-23
               </time>
             
 
@@ -320,15 +319,39 @@
       
 
       
-        <blockquote>
-<p>收费项目常用方法总结 不间断更新</p>
+        <p>title: 分布式文件系统HDFS date: 2018-01-23 01:43:55 tags: 大数据 keywords: 大数据</p>
+<h4 id="HDFS文档"><a href="#HDFS文档" class="headerlink" title="HDFS文档"></a>HDFS文档</h4><p><a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" target="_blank" rel="noopener">http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html</a></p>
+<h4 id="HDFS架构"><a href="#HDFS架构" class="headerlink" title="HDFS架构"></a>HDFS架构</h4><p>HDFS has a master/slave architecture. An HDFS cluster consists of a single NameNode, a master server that manages the file system namespace and regulates access to files by clients. In addition, there are a number of DataNodes, usually one per node in the cluster, which manage storage attached to the nodes that they run on. HDFS exposes a file system namespace and allows user data to be stored in files. Internally, a file is split into one or more blocks and these blocks are stored in a set of DataNodes. The NameNode executes file system namespace operations like opening, closing, and renaming files and directories. It also determines the mapping of blocks to DataNodes. The DataNodes are responsible for serving read and write requests from the file system’s clients. The DataNodes also perform block creation, deletion, and replication upon instruction from the NameNode.</p>
+<p>(此处应有官网架构图,待文件服务器好后上传)</p>
+<h4 id="HDFS环境搭建"><a href="#HDFS环境搭建" class="headerlink" title="HDFS环境搭建"></a>HDFS环境搭建</h4><h5 id="安装版本"><a href="#安装版本" class="headerlink" title="安装版本"></a>安装版本</h5><p>这里不用官网版本,而是用hadoop衍生版本。<br><a href="http://blog.csdn.net/duyuanhai/article/details/54908298" target="_blank" rel="noopener">选择CDH的理由</a></p>
+<h5 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h5><p><a href="http://archive.cloudera.com/cdh5/cdh/5/" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/cdh/5/</a></p>
+<p>版本:<a href="http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.7.0.tar.gz" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.7.0.tar.gz</a></p>
+<h6 id="Linux安装"><a href="#Linux安装" class="headerlink" title="Linux安装"></a>Linux安装</h6><p>wget URL</p>
+<p>解压</p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><blockquote>
+<p>本次为单节点配置。多节点安装日后再说</p>
 </blockquote>
-<hr>
-<h3 id="缴费相关"><a href="#缴费相关" class="headerlink" title="缴费相关"></a>缴费相关</h3><p>啦啦啦</p>
-<hr>
-<h3 id="其他相关"><a href="#其他相关" class="headerlink" title="其他相关"></a>其他相关</h3><h4 id="导出excel"><a href="#导出excel" class="headerlink" title="导出excel"></a>导出excel</h4><h5 id="TITLE只有一行"><a href="#TITLE只有一行" class="headerlink" title="TITLE只有一行"></a>TITLE只有一行</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Object[]&gt; exportlist = <span class="keyword">null</span>;</span><br><span class="line">String[] titles = &#123;title1,title2,title3&#125;;</span><br><span class="line">exportExcel(<span class="keyword">null</span>, sheetName, titles, fileName, exportlist);</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h5 id="自定义TITLE"><a href="#自定义TITLE" class="headerlink" title="自定义TITLE"></a>自定义TITLE</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Object[]&gt; list = <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">this</span>.exportExcel(heardName, <span class="string">"sheet"</span>, fileName, <span class="number">12</span>, list, <span class="keyword">false</span>, <span class="keyword">new</span> IExcelTitle() &#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> String[] getTitle(<span class="keyword">int</span> index) &#123;</span><br><span class="line">		<span class="keyword">switch</span> (index) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">new</span> String[]&#123;title11,title12,title13&#125;;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			    <span class="keyword">return</span> <span class="keyword">new</span> String[]&#123;title21,title22,title23,title24&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span>[][] getColRow(<span class="keyword">int</span> index) &#123;</span><br><span class="line">		<span class="keyword">switch</span> (index) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;&#123;<span class="number">1</span>,<span class="number">2</span>&#125;,&#123;<span class="number">2</span>,<span class="number">1</span>&#125;,&#123;<span class="number">2</span>,<span class="number">1</span>&#125;&#125;;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;&#123;<span class="number">1</span>,<span class="number">1</span>&#125;,&#123;<span class="number">1</span>,<span class="number">1</span>&#125;,&#123;<span class="number">1</span>,<span class="number">1</span>&#125;,&#123;<span class="number">1</span>,<span class="number">1</span>&#125;&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * title一共多少行</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getRowTitleSize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>参考文档<br><a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html" target="_blank" rel="noopener">http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html</a></p>
+<p>1.配置JAVA HOME</p>
+<blockquote>
+<p>tip : echo $JAVA_HOME</p>
+</blockquote>
+<p>etc/hadoop/hadoop-env.sh<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># set to the root of your Java installation</span><br><span class="line">export JAVA_HOME=/usr/java/latest</span><br></pre></td></tr></table></figure></p>
+<p>2.core-site.xml<br>etc/hadoop/core-site.xml<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;fs.defaultFS&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;hdfs:<span class="comment">//localhost:9000&lt;/value&gt;</span></span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
+<p>3.副本系数</p>
+<p>etc/hadoop/hdfs-site.xml</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;1&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+<p>因单节点,系数设置为1</p>
+<p>4:格式化</p>
+<blockquote>
+<p>不可重复格式化!</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/hdfs namenode -format</span><br></pre></td></tr></table></figure>
+<p>格式化的时候可能报如下错误<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">java.net.UnknownHostException: iZbp1bb1rjtnkeukcsmczgZ: iZbp1bb1rjtnkeukcsmczgZ</span><br><span class="line">        at java.net.InetAddress.getLocalHost(InetAddress.java:<span class="number">1475</span>)</span><br><span class="line">        at org.apache.hadoop.net.DNS.resolveLocalHostname(DNS.java:<span class="number">264</span>)</span><br><span class="line">        at org.apache.hadoop.net.DNS.&lt;clinit&gt;(DNS.java:<span class="number">57</span>)</span><br><span class="line">        at org.apache.hadoop.hdfs.server.namenode.NNStorage.newBlockPoolID(NNStorage.java:<span class="number">966</span>)</span><br><span class="line">        at org.apache.hadoop.hdfs.server.namenode.NNStorage.newNamespaceInfo(NNStorage.java:<span class="number">575</span>)</span><br><span class="line">        at org.apache.hadoop.hdfs.server.namenode.FSImage.format(FSImage.java:<span class="number">144</span>)</span><br><span class="line">        at org.apache.hadoop.hdfs.server.namenode.NameNode.format(NameNode.java:<span class="number">1041</span>)</span><br><span class="line">        at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:<span class="number">1479</span>)</span><br><span class="line">        at org.apache.hadoop.hdfs.server.namenode.NameNode.main(NameNode.java:<span class="number">1606</span>)</span><br></pre></td></tr></table></figure></p>
+<p>原因是主机名映射未找到,在<code>/etc/host /etc/sysconfig/network</code>配置上即可</p>
+<p>5:启动</p>
+<p>sbin/start-dfs.sh</p>
+<p>启动后用jps命令查看是否启动成功</p>
 
       
     </div>
@@ -344,12 +367,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/收费/" rel="tag"># 收费</a>
-          
-        </div>
-      
 
       
       
@@ -359,8 +376,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/05/收费简单数据表/" rel="next" title="收费系统数据表简单操作">
-                <i class="fa fa-chevron-left"></i> 收费系统数据表简单操作
+              <a href="/2018/01/15/Intellij实用技巧/" rel="next" title="Intellij实用技巧">
+                <i class="fa fa-chevron-left"></i> Intellij实用技巧
               </a>
             
           </div>
@@ -368,10 +385,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/11/测试链接/" rel="prev" title="测试链接下载">
-                测试链接下载 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -494,7 +507,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#缴费相关"><span class="nav-number">1.</span> <span class="nav-text">缴费相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他相关"><span class="nav-number">2.</span> <span class="nav-text">其他相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导出excel"><span class="nav-number">2.1.</span> <span class="nav-text">导出excel</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#TITLE只有一行"><span class="nav-number">2.1.1.</span> <span class="nav-text">TITLE只有一行</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义TITLE"><span class="nav-number">2.1.2.</span> <span class="nav-text">自定义TITLE</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HDFS文档"><span class="nav-number">1.</span> <span class="nav-text">HDFS文档</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HDFS架构"><span class="nav-number">2.</span> <span class="nav-text">HDFS架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HDFS环境搭建"><span class="nav-number">3.</span> <span class="nav-text">HDFS环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装版本"><span class="nav-number">3.1.</span> <span class="nav-text">安装版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下载地址"><span class="nav-number">3.2.</span> <span class="nav-text">下载地址</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Linux安装"><span class="nav-number">3.2.1.</span> <span class="nav-text">Linux安装</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置"><span class="nav-number">4.</span> <span class="nav-text">配置</span></a></li></ol></div>
             
 
           </div>
